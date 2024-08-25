@@ -1,0 +1,238 @@
+* {
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+	overflow-x: hidden;
+}
+
+
+.home-page {
+	position: relative;
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	/* height: 100%; */
+	margin: 0;
+	background: black;
+	color: #ccc;
+	background-image: url("./footballfield.jpg");
+	min-height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* opacity: 0.5; */
+	/* background-color: #5f73ff; */
+}
+
+.home-page::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	filter: opacity(1); /* Set opacity of the background image */
+	z-index: -1; /* Ensure pseudo-element is behind content */
+}
+
+.role-region {
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+
+.role {
+	max-height: 600px;
+}
+
+
+.start-region {
+	position: relative;
+	width: 50%;
+	height: 100%;
+}
+
+.start-button {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-image: linear-gradient(
+		120deg,
+		#7afffb,
+		#79fcff,
+		#75eaff,
+		#6eccff,
+		#67a4ff,
+		#5f73ff,
+		#7156ff,
+		#9b4eff,
+		#c547ff,
+		#e940ff,
+		#ff3cfc,
+		#ff3bf2
+	);
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%, -50%);
+	
+	/* background-position: top left; */
+	/* background-size: 100%; */
+	/* box-shadow: 0px 0px 400px rgba(255, 59, 242, 1),
+		0px 0px 200px rgba(255, 59, 242, 0.75), 0px 0px 100px rgba(255, 59, 242, 0.5),
+		0px 0px 50px rgba(255, 59, 242, 0.35), 0px 0px 25px rgba(255, 59, 242, 0.2); */
+	border-radius: 100%;
+	border: none;
+	margin: 0;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.start-button:hover {
+	box-shadow: 0px 0px 400px rgba(122, 255, 251, 1),
+		0px 0px 200px rgba(122, 255, 251, 0.75),
+		0px 0px 100px rgba(122, 255, 251, 0.5), 
+		0px 0px 50px rgba(122, 255, 251, 0.35),
+		0px 0px 25px rgba(122, 255, 251, 0.2);
+	padding: 20px;
+	background-size: 180%;
+	transition: all 0.3s ease;
+}
+
+.start-button:active {
+	transform: scale(0.9);
+	transition: all 0.05s ease;
+}
+
+.start-button::before {
+	position: absolute;
+	width: calc(100% + 20px);
+	height: calc(100% + 20px);
+	border: 1px solid rgba(255, 59, 242, 0.8);
+	border-radius: 100%;
+	pointer-events: none;
+	content: "";
+	transition: all 0.3s ease;
+}
+
+.start-button:hover::before {
+	border: 1px solid rgba(122, 255, 251, 0.6);
+	width: calc(100% + 40px);
+	height: calc(100% + 40px);
+	transition: all 0.3s ease;
+}
+
+.start-button:active::before {
+	width: calc(100% + 20px);
+	height: calc(100% + 20px);
+	transition: all 0.07s ease;
+}
+
+.start-button::after {
+	position: absolute;
+	width: calc(100% + 40px);
+	height: calc(100% + 40px);
+	border: 2px dashed rgba(255, 59, 242, 0.4);
+	box-shadow: 0px 0px 100px rgba(122, 255, 251, 0.1);
+	border-radius: 100%;
+	pointer-events: none;
+	animation: rotate 30s linear infinite;
+	content: "";
+	transition: all 0.3s ease;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotateZ(-360deg);
+	}
+}
+
+.start-button:hover::after {
+	border: 2px dashed rgba(122, 255, 251, 0.3);
+	width: calc(100% + 80px);
+	height: calc(100% + 80px);
+	transition: all 0.3s ease;
+}
+
+.start-button:active::after {
+	width: calc(100% + 40px);
+	height: calc(100% + 40px);
+	transition: all 0.07s ease;
+}
+
+.start-button > svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	mix-blend-mode: overlay;
+	transition: all 0.3s ease;
+	z-index: 1;
+}
+
+.start-button i {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.start-button i svg {
+	position: relative;
+	width: 100%;
+	height: auto;
+	filter: drop-shadow(0px 0px 5px white);
+	mix-blend-mode: overlay;
+}
+
+.start-button:hover i svg {
+	animation: shake 0.5s linear infinite;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(15deg);
+	}
+	75% {
+		transform: rotate(-15deg);
+	}
+}
+
+
+
+
+
+aside {
+	position: absolute;
+	font: normal normal 900 14pt / 2cap "Architects Daughter", cursive;
+	bottom: 10%;
+	color: #777;
+	transition: all 0.3s ease;
+}
+
+.start-button:hover ~ aside {
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+@media (max-height: 270px) {
+	aside {
+		display: none;
+	}
+}
